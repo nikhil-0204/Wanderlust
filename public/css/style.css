@@ -1,0 +1,297 @@
+body {
+    font-family: "Plus Jakarta Sans", sans-serif !important;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.container {
+    flex: 1;
+}
+
+.navbar {
+    height: 5rem;
+    background-color: #ffffff !important;
+    border-bottom: 1px solid #e5e5e5;
+    padding: 0 2rem;
+}
+
+/* Compass logo */
+.navbar-brand {
+    font-size: 2rem;
+    color: #fe424d !important;
+    margin-right: 2rem;
+    transition: transform 0.2s ease;
+}
+
+.navbar-brand:hover {
+    transform: scale(1.08);
+}
+
+/* Navigation links */
+.navbar-nav .nav-link {
+    color: #222222 !important;
+    font-size: 1rem;
+    font-weight: 500;
+    margin-right: 1.5rem;
+    padding: 0.5rem 0 !important;
+    transition: color 0.2s ease;
+}
+
+.navbar-nav .nav-link:hover {
+    color: #fe424d !important;
+}
+
+/* Mobile hamburger button */
+.navbar-toggler {
+    width: auto;
+    padding: 0.35rem 0.6rem;
+    border: 1px solid #999;
+    border-radius: 0.4rem;
+}
+
+.navbar-toggler:focus {
+    box-shadow: none;
+}
+
+/* Mobile view */
+@media (max-width: 991px) {
+
+    .navbar {
+        height: auto;
+        min-height: 5rem;
+        padding: 0.75rem 1rem;
+    }
+
+    .navbar-nav {
+        padding-top: 0.75rem;
+    }
+
+    .navbar-nav .nav-link {
+        margin-right: 0;
+        padding: 0.7rem 0 !important;
+    }
+}
+
+/* Footer */
+.f-info-links a {
+    text-decoration: none;
+    color: #222222;
+}
+
+.f-info-links a:hover {
+    text-decoration: underline;
+}
+
+.f-info-links,
+.f-info-socials,
+.f-info-brand {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.f-info-socials i {
+    font-size: 1.2rem;
+    margin-right: 1rem;
+}
+
+.f-info {
+    text-align: center;
+    height: 8rem;
+    background-color: #ebebeb;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: space-evenly;
+}
+
+/* Cards (base) */
+.listing-card {
+    border: none !important;
+    margin-bottom: 2rem;
+}
+
+.card-img-top {
+    border-radius: 1rem !important;
+    width: 100% !important;
+    object-fit: cover !important;
+}
+
+.card-body {
+    padding: 0 !important;
+}
+
+/* Buttons / edit page */
+.add-btn {
+    background-color: #fe424d !important;
+    border: none !important;
+}
+
+.edit-image-container {
+    width: 250px;
+    height: 180px;
+    overflow: hidden;
+    border-radius: 12px;
+    border: 1px solid #dee2e6;
+    background-color: #f8f9fa;
+}
+
+.edit-listing-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+/* Listings page: grid spacing and page width */
+.row.row-cols-lg-3 {
+    --bs-gutter-x: 1.9rem;
+    --bs-gutter-y: 2.5rem;
+    max-width: 1600px;
+    margin: 0 auto;
+}
+
+/* Listings page: link wrapper */
+a.listing-link {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+    margin-bottom: 2rem;
+}
+
+/* Listings page: card (no box, no border, no overlay) + hover animation */
+a.listing-link .card.listing-card {
+    border: none !important;
+    background: transparent !important;
+    box-shadow: none !important;
+    opacity: 1 !important;
+    width: 100%;
+    border-radius: 1.2rem !important;
+    padding: 0 !important;
+    transition: transform 0.25s ease, box-shadow 0.25s ease, background-color 0.25s ease;
+}
+
+a.listing-link .card.listing-card .card-img-overlay {
+    display: none !important;
+}
+
+/* Hover: lift + soft shadow + white background */
+a.listing-link:hover .card.listing-card {
+    transform: translateY(-6px);
+    background: #fff !important;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15) !important;
+}
+
+/* Listings page: landscape image */
+a.listing-link .card.listing-card .card-img-top {
+    display: block;
+    width: 100%;
+    height: auto !important;
+    /* overrides the inline height in index.ejs */
+    aspect-ratio: 1.4 / 1 !important;
+    object-fit: cover;
+    border-radius: 1.2rem !important;
+    opacity: 1 !important;
+}
+
+/* Listings page: text under the image */
+a.listing-link .card.listing-card .card-body {
+    padding: 0.8rem 0 0 0 !important;
+}
+
+a.listing-link .card.listing-card .card-text {
+    font-size: 1.05rem;
+    font-weight: 700;
+    /* price */
+    line-height: 1.5;
+    margin: 0;
+}
+
+a.listing-link .card.listing-card .card-text b {
+    font-size: 1.3rem;
+    font-weight: 400;
+    /* title */
+}
+
+/* Reviews */
+.reviews-heading {
+    font-size: 2rem;
+    font-weight: 600;
+    margin: 2rem 0 1.5rem;
+}
+
+.review-card {
+    background: #fff;
+    border: 1px solid #dee2e6;
+    border-radius: 0.6rem;
+    padding: 2rem 2.2rem;
+    height: 100%;
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.review-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
+}
+
+.review-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.review-author {
+    font-size: 1.4rem;
+    font-weight: 500;
+    margin: 0;
+}
+
+.review-date {
+    color: #6c757d;
+    font-size: 1rem;
+}
+
+.review-pill {
+    background: #fff3cd;
+    color: #7a5b00;
+    font-weight: 600;
+    padding: 0.45rem 1rem;
+    border-radius: 2rem;
+    font-size: 1rem;
+    white-space: nowrap;
+}
+
+.review-comment {
+    color: #495057;
+    font-size: 1.1rem;
+    margin: 1.2rem 0 0.8rem;
+}
+
+.review-stars {
+    font-size: 1.4rem;
+    letter-spacing: 0.35rem;
+    margin-bottom: 1rem;
+}
+
+.review-stars .filled {
+    color: #f5b301;
+}
+
+.review-stars .empty {
+    color: #222;
+    font-size: 1.1rem;
+}
+
+.card img,
+.card-img-top,
+img.show-img {
+    width: 100% !important;
+    height: auto !important;
+    max-height: none !important;
+    aspect-ratio: 2.8 / 1 !important;
+    object-fit: cover !important;
+    border-radius: 1.2rem !important;
+    display: block;
+}
